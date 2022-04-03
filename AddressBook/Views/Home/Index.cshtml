@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model AddressBook.Models.PersonModel
+
+<div class="card mb-5 mb-xl-10">
+    <!--begin::Card header-->
+    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+        <!--begin::Card title-->
+        <div class="card-title m-0">
+            <h3 class="fw-bolder m-0">Profile Details</h3>
+        </div>
+        <!--end::Card title-->
+    </div>
+    <!--begin::Card header-->
+    <!--begin::Content-->
+    <div id="kt_account_profile_details" class="collapse show">
+        <!--begin::Form-->
+
+        @using (Html.BeginForm())
+        {
+            <!--begin::Card body-->
+            <div class="card-body border-top p-9" data-select2-id="select2-data-82-26wr">
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-bold fs-6">Ad - Soyad</label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                            <!--begin::Col-->
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                                @Html.TextBoxFor(x=>x.Name, new {@class="form-control form-control-lg form-control-solid mb-3 mb-lg-0",@placeholder="Adınız", @required="required"})
+                                @*<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Adınız" required>*@
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                                @Html.TextBoxFor(x=>x.Surname, new {@class="form-control form-control-lg form-control-solid mb-3 mb-lg-0",@placeholder="Soyadınız", @required="required"})
+                                @*<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Soyadınız" required>*@
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Telefon No</span>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        @Html.TextBoxFor(x=>x.PhoneNumber, new {@class="form-control form-control-lg form-control-solid mb-3 mb-lg-0",@placeholder="Telefon No", @required="required", @type="tel"})
+                        @*<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Telefon No">*@
+                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">E-Mail</span>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        @Html.TextBoxFor(x=>x.Email, new {@class="form-control form-control-lg form-control-solid mb-3 mb-lg-0",@placeholder="Email", @required="required"})
+                        @*<input type="text" name="email" class="form-control form-control-lg form-control-solid" placeholder="E-Mailiniz">*@
+                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-bold fs-6">
+                        <span class="required">Adres</span>
+                    </label>
+                    <!--end::Label-->
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        @Html.TextAreaFor(x=>x.Address, new {@class="form-control form-control-lg form-control-solid mb-3 mb-lg-0",@placeholder="Adres", @required="required"})
+                        @*<textarea name="address" class="form-control form-control-lg form-control-solid" placeholder="Adresiniz"></textarea>*@
+                        @*<input type="text" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Adresiniz">*@
+                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+                
+                
+            </div>
+            <!--end::Card body-->
+            <!--begin::Actions-->
+            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                <button type="reset" class="btn btn-light btn-active-light-primary me-2">İptal</button>
+                <button type="submit" formmethod="post" class="btn btn-primary" id="kt_account_profile_details_submit">Kaydet</button>
+            </div>
+            <!--end::Actions-->
+            <input type="hidden"><div></div>
+        }
+
+        
+        <!--end::Form-->
+    </div>
+    <!--end::Content-->
+</div>
